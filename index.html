@@ -1,1 +1,80 @@
-html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Xadrez com JavaScript - Aula 1</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        #tabuleiro {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(8, 60px);
+            border: 3px solid #000;
+            margin-top: 20px;
+        }
+
+        .casa {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+        }
+
+        .clara {
+            background: #eee;
+        }
+
+        .escura {
+            background: #555;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>POO com JavaScript — Aula 1</h1>
+    <div id="tabuleiro"></div>
+    <script>
+        class Tabuleiro {
+            constructor(elemento){
+                this.elemento = elemento;
+                this.tamanho = 8;
+                this.casas = [];
+            }
+
+            criarCasas() {
+                for (let linha = 0; linha < this.tamanho; linha ++){
+                    this.casas[linha] = [];
+                    for (let coluna = 0; coluna < this.tamanho; coluna++){
+                        const casa = document.createElement("div");
+                        casa.classList.add("casa");
+                        (linha+coluna) % 2 === 0 ? class.classList.add("clara") : casa.classList.add("escura")
+                        casa.dataset.linha = linha;
+                        casa.dataset.coluna = coluna; 
+                        this.elemento.appendChild(casa);
+                        this.casas[linha][coluna] = casa;
+                    }
+                }
+            }
+        }
+        
+        const tabuleiro = new Tabuleiro(document.getElementById("tabuleiro"));
+        tabuleiro.criarCasas()
+    </script>
+</body>
+
+</html>
