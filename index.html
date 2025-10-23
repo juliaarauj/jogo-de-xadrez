@@ -62,7 +62,7 @@
                     for (let coluna = 0; coluna < this.tamanho; coluna++){
                         const casa = document.createElement("div");
                         casa.classList.add("casa");
-                        (linha+coluna) % 2 === 0 ? class.classList.add("clara") : casa.classList.add("escura")
+                        (linha+coluna) % 2 === 0 ? casa.classList.add("clara") : casa.classList.add("escura")
                         casa.dataset.linha = linha;
                         casa.dataset.coluna = coluna; 
                         this.elemento.appendChild(casa);
