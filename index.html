@@ -95,6 +95,37 @@
             }
         }
 
+        class Cavalo extends Peca {
+            constructor(cor) {
+                super("Cavalo", cor === "branca" ? "♘" : "♞", cor);
+            }
+        }
+
+        class Bispo extends Peca {
+            constructor(cor) {
+                super("Bispo", cor === "branca" ? "♗" : "♝", cor);
+            }
+        }
+
+        class Rainha extends Peca {
+            constructor(cor) {
+                super("Rainha", cor === "branca" ? "♕" : "♛", cor);
+            }
+        }
+
+        class Rei extends Peca {
+            constructor(cor) {
+                super("Rei", cor === "branca" ? "♔" : "♚", cor);
+            }
+        }
+
+        class Peao extends Peca {
+            constructor(cor) {
+                super("Peão", cor === "branca" ? "♙" : "♟", cor);
+            }
+        }
+
+
         const tabuleiro = new Tabuleiro(document.getElementById("tabuleiro"));
         tabuleiro.criarCasas();
         tabuleiro.adicionarPecas();
